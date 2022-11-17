@@ -3,13 +3,17 @@ import { MDXRemote } from 'next-mdx-remote'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import Button from '../../components/Button'
-const PostPage = ({ frontMatter: { title }, mdxSource }) => {
+import Highlighter from '../../components/HightLighter/HightLighter'
+import Button from '../../components/Button';
+import MathTax from '../../components/MathTax/MathTax';
+
+const PostPage = (props) => {
+  const { frontMatter: { title }, mdxSource } = props;
     return (
-      <div className="mt-4">
-        <h1>{title}</h1>
-        <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter }} />
+      <div className="pl-20 pr-100">
+        <div className="text-30 font-bold pb-10">{title}</div>
+        <div></div>
+        <MDXRemote {...mdxSource} components={{ Button, Highlighter,MathTax }} />
       </div>
     )
   }
