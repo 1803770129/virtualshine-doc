@@ -38,6 +38,9 @@ module.exports = {
           'black': '#0F1419',
           'bg': '#F7F8FA'
         },
+        gold:{
+          484:'#484011'
+        }
       },
       zIndex: {
         '-1': -1,
@@ -73,6 +76,8 @@ module.exports = {
         300: '300px',
         320: '320px',
         350: '350px',
+        400: '400px',
+        500: '500px',
         middle: '50%',
         full: '100%',
         auto: 'auto',
@@ -98,7 +103,9 @@ module.exports = {
     minHeight: (theme) => theme('height'),
     plugins: [],
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }
 function formatNegativeNumbers(theme) {
   let obj = {};

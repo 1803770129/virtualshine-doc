@@ -5,7 +5,7 @@ export function followingDotCursor(options) {
     let width = window.innerWidth;
     let height = window.innerHeight;
     let cursor = { x: width / 2, y: width / 2 };
-    let dot = new Dot(width / 2, height / 2, 12, 12);
+    let dot = new Dot(width / 2, height / 2, 15, 15);
     let canvas, context, animationFrame;
     let color = options?.color || "#323232a6";
   
@@ -55,7 +55,6 @@ export function followingDotCursor(options) {
   
     // Bind events that are needed
     function bindEvents() {
-      element.addEventListener("mousemove", onMouseMove);
       element.addEventListener("mousemove", onMouseMove);
       window.addEventListener("resize", onWindowResize);
     }

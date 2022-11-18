@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Nav from '../components/Nav/nav'
 import { useRouter } from 'next/router';
 import 'katex/dist/katex.min.css';
+import styles from '../styles/Index.module.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main style={{minHeight:'100vh'}}>
+        <div className={styles.light}></div>
         <Nav back={router.pathname.includes('slug')?true:false} />
         <Component {...pageProps} />
       </main>
