@@ -12,3 +12,8 @@ https://blog.jetbrains.com/webstorm/2021/10/building-a-blog-with-next-js-and-mdx
 
 ### webVr
 https://aframe.io/examples/showcase/beatsaver-viewer/
+
+### git action
+https://blog.51cto.com/youthfighter/4805540
+
+https://www.shuzhiduo.com/A/VGzl4wgVzb/
