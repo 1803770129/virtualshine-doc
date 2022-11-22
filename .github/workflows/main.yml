@@ -28,9 +28,9 @@ jobs:
     - name: Upload
       uses: appleboy/scp-action@master
       with: 
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USERNAME }}
-        key: ${{ secrets.PRIVATE_KEY }}
+        host: ${{ secrets.SAMIR_HOST  }}
+        username: ${{ secrets.NAME  }}
+        key: ${{ secrets.SAMIR_PWD  }}
         # 拷贝 .next、public文件夹和package.json文件到服务器指定目录
         source: ".next/,public/,package.json"
-        target: "/nextjs-demo"
+        target: "/home/nginx/3d/people_crossing/dist"
