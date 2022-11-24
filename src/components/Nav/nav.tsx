@@ -10,7 +10,7 @@ export default function Nav({back}:INav) {
   return (
     <>
         <div className={back?"px-20 py-20 w-full flex justify-between sticky top-0 ":"px-20 py-20 w-full flex justify-end sticky top-0"}>
-          {back&&<div className="select-none w-50 hover:text-skin-900" onClick={()=>router.back()}>back</div>}
+          {back&&<div className="select-none w-60 h-35 flex items-center justify-center hover:text-skin-900 bg-black rounded-8" onClick={()=>router.back()}>back</div>}
           <span className="iconfont icon-github text-white text-40 hover:text-skin-900 "></span>
         </div>
     </>
