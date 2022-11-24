@@ -6,6 +6,7 @@ import matter from 'gray-matter'
 import Highlighter from '../../components/HightLighter/HightLighter'
 import Button from '../../components/Button';
 import MathTax from '../../components/MathTax/MathTax';
+import PdfLoader from '../../components/PdfLoader/PdfLoader';
 
 const PostPage = (props) => {
   const { frontMatter: { title }, mdxSource } = props;
@@ -14,7 +15,7 @@ const PostPage = (props) => {
       <div className="text-30 font-bold pb-10">{title}</div>
       <div></div>
       <div className="prose  dark:prose-invert max-w-full">
-        <MDXRemote {...mdxSource} components={{ Button, Highlighter, MathTax }} />
+        <MDXRemote {...mdxSource} components={{ Button, Highlighter, MathTax, PdfLoader }} />
       </div>
     </div>
   )
