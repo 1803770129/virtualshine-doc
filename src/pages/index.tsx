@@ -43,7 +43,7 @@ export default function Index({ posts }: { posts: any }) {
   )
 }
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('posts'));
   const posts = files.map(filename => {
     const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
     const { data: frontMatter } = matter(markdownWithMeta)
@@ -52,9 +52,39 @@ export const getStaticProps = async () => {
       slug: filename.split('.')[0]
     }
   })
+  const mathFiles = fs.readdirSync(path.join('maths'));
+  const mathPosts = mathFiles.map(filename => {
+    const markdownWithMeta = fs.readFileSync(path.join('maths', filename), 'utf-8')
+    const { data: frontMatter } = matter(markdownWithMeta)
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+  })
+  const gameFiles = fs.readdirSync(path.join('games'));
+  const gamePosts = gameFiles.map(filename => {
+    const markdownWithMeta = fs.readFileSync(path.join('games', filename), 'utf-8')
+    const { data: frontMatter } = matter(markdownWithMeta)
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+  })
+  const otherFiles = fs.readdirSync(path.join('others'));
+  const otherPosts = otherFiles.map(filename => {
+    const markdownWithMeta = fs.readFileSync(path.join('others', filename), 'utf-8')
+    const { data: frontMatter } = matter(markdownWithMeta)
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+  })
   return {
     props: {
-      posts
+      posts,
+      mathPosts,
+      gamePosts,
+      otherPosts
     }
   }
 }
