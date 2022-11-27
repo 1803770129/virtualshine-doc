@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <HostTitle />
         </div>
         <div></div>
-        <div className="fixed bottom-10 right-10 w-50 h-50 bg-black flex items-center justify-center rounded-full hover:bg-skin-900"><span className="iconfont icon-qiandai text-28 "></span></div>
+        <div className="fixed bottom-10 right-10 w-50 h-50 bg-black flex items-center justify-center rounded-full hover:bg-skin-900"><span className="iconfont icon-qiandai text-28 ">￥8</span></div>
       </main>
     </>
   )
