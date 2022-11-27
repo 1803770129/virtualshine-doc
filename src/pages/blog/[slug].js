@@ -9,12 +9,13 @@ import MathTax from '../../components/MathTax/MathTax';
 import PdfLoader from '../../components/PdfLoader/PdfLoader';
 
 const PostPage = (props) => {
-  const { frontMatter: { title }, mdxSource } = props;
+  const { frontMatter: { title, author }, mdxSource } = props;
   return (
     <div className="pl-20 pr-500">
       <div className="text-30 font-bold pb-10">{title}</div>
+      <div>author：{author}</div>
       <div></div>
-      <div className="prose  dark:prose-invert max-w-full">
+      <div className="prose  max-w-full">
         <MDXRemote {...mdxSource} components={{ Button, Highlighter, MathTax, PdfLoader }} />
       </div>
     </div>
