@@ -50,3 +50,16 @@
         transform: rotate(1turn); 
     } 
 }
+
+.tabText{
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.tabText:hover{
+    transition: all;
+    transition-duration: 500ms;
+    transform: translate(-20px);
+    color: #1A82D2;
+}

@@ -6,10 +6,29 @@ import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
 import { useState } from 'react'
+import classnames from 'classnames';
 
 
 export default function Index({ posts,mathPosts,gamePosts,otherPosts }: { posts: any,mathPosts:any,gamePosts:any,otherPosts:any }) {
   const [type, setType] = useState('post');
+  const tabbar = [
+    {
+      name:'Home',
+      key:'post'
+    },
+    {
+      name:'Math',
+      key:'math'
+    },
+    {
+      name:'Game',
+      key:'game'
+    },
+    {
+      name:'Archive',
+      key:'other'
+    },
+  ]
   return (
     <div>
       <Head>
@@ -109,6 +128,19 @@ export default function Index({ posts,mathPosts,gamePosts,otherPosts }: { posts:
             </Link>
           )
         })}
+      </div>
+      <div className="fixed right-50 text-20 top-200 flex flex-col justify-between" style={{height:'50%'}}>
+        {
+          tabbar.map(item=>{
+            return (
+              <div className='flex items-center'>
+                <div className={classnames(item.key===type?'text-skin-900':'text-white',styles.tabText)} onClick={()=>setType(item.key)}>{item.name}</div>
+                {item.key===type&&<div className='h-20 w-4 bg-skin-900 mt-2'></div>}
+              </div>
+              
+            )
+          })
+        }
       </div>
     </div>
   )
