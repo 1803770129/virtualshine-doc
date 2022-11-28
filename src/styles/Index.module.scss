@@ -53,13 +53,23 @@
 
 .tabText{
     width: 80px;
-    text-align: right;
     margin-right: 10px;
     font-weight: bold;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
-.tabText:hover{
-    transition: all;
-    transition-duration: 500ms;
-    transform: translate(-20px);
-    color: #1A82D2;
+.tabbarItem{
+    display: flex;
+    align-items: center;
+}
+.tabbarItem:hover{
+    .tabText{
+        transition: all;
+        transition-duration: 500ms;
+        transform: translate(-20px);
+        font-weight: normal;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #62aef5, 0 0 35px #62aef5, 0 0 40px #62aef5, 0 0 50px #62aef5, 0 0 75px #62aef5;
+    }
 }
