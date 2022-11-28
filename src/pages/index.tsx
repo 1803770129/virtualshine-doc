@@ -137,7 +137,6 @@ export default function Index({ posts,mathPosts,gamePosts,otherPosts }: { posts:
                 <div className={classnames(item.key===type?'text-skin-900':'text-white',styles.tabText)}>{item.name}</div>
                 {item.key===type&&<div className='h-20 w-4 bg-skin-900 mt-2'></div>}
               </div>
-              
             )
           })
         }
