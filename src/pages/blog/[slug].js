@@ -7,6 +7,8 @@ import Highlighter from '../../components/HightLighter/HightLighter'
 import Button from '../../components/Button';
 import MathTax from '../../components/MathTax/MathTax';
 import PdfLoader from '../../components/PdfLoader/PdfLoader';
+import ContentHighlighter from '../../components/ContentHighlighter/ContentHighlighter';
+import QuoteBlock from '../../components/QuoteBlock/QuoteBlock';
 
 const PostPage = (props) => {
   const { frontMatter: { title, author }, mdxSource } = props;
@@ -15,8 +17,8 @@ const PostPage = (props) => {
       <div className="text-30 font-bold pb-10">{title}</div>
       <div>author：{author}</div>
       <div></div>
-      <div className="prose  max-w-full">
-        <MDXRemote {...mdxSource} components={{ Button, Highlighter, MathTax, PdfLoader }} />
+      <div className="prose dark:prose-invert max-w-full" style={{color:'white'}}>
+        <MDXRemote {...mdxSource} components={{ Button, Highlighter, MathTax, PdfLoader,ContentHighlighter, QuoteBlock }} />
       </div>
     </div>
   )

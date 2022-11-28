@@ -133,7 +133,7 @@ export default function Index({ posts,mathPosts,gamePosts,otherPosts }: { posts:
         {
           tabbar.map(item=>{
             return (
-              <div className='flex items-center' key={item.key}>
+              <div className="flex items-center select-none" key={item.key}>
                 <div className={classnames(item.key===type?'text-skin-900':'text-white',styles.tabText)} onClick={()=>setType(item.key)}>{item.name}</div>
                 {item.key===type&&<div className='h-20 w-4 bg-skin-900 mt-2'></div>}
               </div>

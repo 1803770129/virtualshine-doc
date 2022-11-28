@@ -8,7 +8,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 8 8" width="8px" height="8px"><circle cx="4" cy="4" r="3" fill="white"/></svg>') 4 4, default;
-  color:white;
 }
 
 /* h1,h2,h3,h4{
