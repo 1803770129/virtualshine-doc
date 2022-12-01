@@ -3,13 +3,14 @@
 }
 
 @function randomConicGradient() {
-    $n: 16 + random(16);
+    $n: 16+random(16);
     $list: ();
-    
+
     @for $i from 0 to $n {
-        $list: $list, rgba(hsl(100, randomNum(250, 5, 10%), randomNum(1, 1, 1%)), randomNum(100, 0, .01));
+        $list: $list,
+        rgba(hsl(100, randomNum(250, 5, 10%), randomNum(1, 1, 1%)), randomNum(100, 0, .01));
     }
-        
+
     @return conic-gradient($list, nth($list, 1));
 }
 
@@ -21,12 +22,14 @@
     right: 0;
     z-index: -1;
     margin: 0;
-    background: 
+    background:
         radial-gradient(hsl(20, randomNum(100, 75, 1%), randomNum(100, 75%, 1%)), black);
-    
-    &:before, &:after {
+
+    &:before,
+    &:after {
         position: absolute;
-        top: -50%; left: -50%;
+        top: -50%;
+        left: -50%;
         border-radius: 100%;
         overflow: hidden;
         width: 250vmax;
@@ -36,8 +39,11 @@
         animation: rotate randomNum(100, 25, .5s) ease-in-out infinite;
         content: '';
     }
-    
-    &:before { background: randomConicGradient(); }
+
+    &:before {
+        background: randomConicGradient();
+    }
+
     &:after {
         // background: randomConicGradient();
         animation-duration: randomNum(100, 25, .5s);
@@ -45,13 +51,13 @@
     }
 }
 
-@keyframes rotate { 
-    to { 
-        transform: rotate(1turn); 
-    } 
+@keyframes rotate {
+    to {
+        transform: rotate(1turn);
+    }
 }
 
-.tabText{
+.tabText {
     width: 80px;
     margin-right: 10px;
     font-weight: bold;
@@ -60,16 +66,69 @@
     align-items: center;
     justify-content: flex-end;
 }
-.tabbarItem{
+
+.tabbarItem {
     display: flex;
     align-items: center;
 }
-.tabbarItem:hover{
-    .tabText{
+
+.tabbarItem:hover {
+    .tabText {
         transition: all;
         transition-duration: 500ms;
         transform: translate(-20px);
         font-weight: normal;
         text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #62aef5, 0 0 35px #62aef5, 0 0 40px #62aef5, 0 0 50px #62aef5, 0 0 75px #62aef5;
+    }
+}
+
+.fixedMonety {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.money {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #fff;
+    opacity: 0;
+    font-size: 10px;
+}
+
+.fixedMonety:hover {
+    background-color: #1A82D2;
+    .money {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        color: #1A82D2;
+        border: 2px solid #1A82D2;
+        animation-name: moneyMove;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+}
+
+@keyframes moneyMove {
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-60px);
+        opacity: 1;
     }
 }
