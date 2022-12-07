@@ -37,3 +37,6 @@ https://codepen.io/
 # 知乎-Fundamental Of Computer Graphics 4th Edition 翻译
 https://zhuanlan.zhihu.com/p/480142555
 https://www.zhihu.com/column/c_1530340454692777985
+
+# 电子书
+http://libgen.rs/
