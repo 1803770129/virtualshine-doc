@@ -78,6 +78,7 @@ module.exports = {
         350: '350px',
         400: '400px',
         500: '500px',
+        600: '600px',
         middle: '50%',
         full: '100%',
         auto: 'auto',
